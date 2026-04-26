@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const cards = [
-  "Hii, I'M Priyanshu Pal, from india, an emerging BSCIT final year stydent, with average of CGPA 9.46.",
+  "Hii, I'M Priyanshu Pal, from india, an emerging BSCIT final year student, with average CGPA 9.46.",
   "I have good command in software development, likes to create creative and interactive websites like this portfolio 😎.",
   "Always eager to learn and inspire from others.",
-  "Some usefull big projects like langopal: A language learning platform.",
-  "Some of small and mini projects like RPS Dash and wheather application.",
-  "Can create latest modern software with inclding AI help, knowledge, and advancement.",
+  "Some useful big projects like Langopal: A language learning platform.",
+  "Some small and mini projects like RPS Dash and weather application.",
+  "Can create modern software including AI-based solutions.",
   "Let's work together 😉, contact me via E-mail or WhatsApp.",
   "Likes to vibe code and learn new things 😄.",
 ];
@@ -17,17 +17,14 @@ const cards = [
 export default function StackedDeck() {
   const [active, setActive] = useState(0);
 
-  // 🔼 move up
   const prevCard = () => {
     setActive((prev) => Math.max(prev - 1, 0));
   };
 
-  // 🔽 move down
   const nextCard = () => {
     setActive((prev) => Math.min(prev + 1, cards.length - 1));
   };
 
-  // ⌨️ keyboard control (IMPORTANT UX)
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowUp") prevCard();
@@ -39,11 +36,10 @@ export default function StackedDeck() {
   }, []);
 
   return (
-    <div className="relative w-380px h-260px mx-auto mt-20">
+    <div className="relative w-[380px] min-w-[380px] h-[260px] mx-auto mt-20">
 
-      {/* 🔼🔽 ARROWS */}
+      {/* 🔼🔽 CONTROLS */}
       <div className="absolute -top-12 right-0 z-50 flex items-center gap-3">
-        
         <button
           onClick={prevCard}
           disabled={active === 0}
@@ -63,7 +59,6 @@ export default function StackedDeck() {
         >
           ↓
         </button>
-
       </div>
 
       {/* 🃏 CARDS */}
@@ -76,9 +71,9 @@ export default function StackedDeck() {
               key={i}
               className="absolute w-full h-full rounded-3xl bg-black border-2 border-white p-8 text-white shadow-2xl"
               animate={{
-                y: offset * 20,                      // vertical stack
-                scale: 1 - Math.abs(offset) * 0.10,  // depth
-                opacity: offset === 0 ? 1 : 0.8,     // focus
+                y: offset * 20,//vertical stack
+                scale: 1 - Math.abs(offset) * 0.10,//depth
+                opacity: offset === 0 ? 1 : 0.8,//focus
                 zIndex: 100 - Math.abs(offset),
                 filter: offset === 0 ? "none" : "blur(2px)",
               }}
