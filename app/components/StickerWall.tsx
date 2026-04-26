@@ -319,8 +319,8 @@ export default function StickerWall() {
         })}
       </div>
       {showEmailBox && (
-        <div className="fixed inset-0 z-[999] bg-black/70 flex items-center justify-center">
-          <div className="bg-zinc-900 rounded-xl p-6 w-[340px] relative">
+        <div className="fixed inset-0 z-999 bg-black/70 flex items-center justify-center">
+          <div className="bg-zinc-900 rounded-xl p-6 w-340px relative">
             {/* Close */}
             <button
               onClick={() => setShowEmailBox(false)}

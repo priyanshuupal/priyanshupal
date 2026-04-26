@@ -39,7 +39,7 @@ export default function StackedDeck() {
   }, []);
 
   return (
-    <div className="relative w-[380px] h-[260px] mx-auto mt-20">
+    <div className="relative w-380px h-260px mx-auto mt-20">
 
       {/* 🔼🔽 ARROWS */}
       <div className="absolute -top-12 right-0 z-50 flex items-center gap-3">
